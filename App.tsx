@@ -1,11 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image,SafeAreaView } from 'react-native';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ScrollView
+              showsVerticalScrollIndicator = {false}
+              contentContainerStyle={styles.content}
+      >
+        <SafeAreaView style={{flex:1}}>
+          <Image source={require('./src/images/rachoco.jpg')}
+          />
+
+        </SafeAreaView>
+      </ScrollView>
+      
     </View>
   );
 }
@@ -13,8 +23,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
+    fontWeight:'bold',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop:100,
   },
 });
